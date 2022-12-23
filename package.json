@@ -1,0 +1,42 @@
+{
+  "name": "pouns-sdk",
+  "version": "1.0.1",
+  "description": "SDK for working with Nouns on-chain NFTs on Polygon (Pouns)",
+  "main": "src/pouns-sdk.js",
+  "scripts": {
+    "lint": "eslint src/",
+    "test": "nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zh/pouns-sdk.git"
+  },
+  "keywords": [
+    "Polygon",
+    "NFT",
+    "Nouns",
+    "protocol"
+  ],
+  "author": "Stoyan Zhekov <zh@zhware.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zh/pouns-sdk/issues"
+  },
+  "homepage": "https://github.com/zh/pouns-sdk#readme",
+  "devDependencies": {
+    "Buffer": "^0.0.0",
+    "chai": "^4.3.7",
+    "eslint-plugin-prettier": "^4.2.1",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0"
+  },
+  "nyc": {
+    "include": [
+      "src"
+    ],
+    "all": true
+  },
+  "dependencies": {
+    "ethers": "^5.7.2"
+  }
+}
