@@ -132,6 +132,15 @@ Most of the images data is also deployed to Mumbai Polygon testnet. In order to 
 const contracts = getContracts('mumbai')
 ```
 
+### Using different RPC node
+
+If the default Alchemy RPC connection is too slow or not working, you can use for example [GetBlock](https://getblock.io) RPC node:
+
+```js
+const rpcURL = 'https://matic.getblock.io/.../testnet/'
+const contracts = getContracts('mumbai', rpcURL)
+```
+
 ## Future plans
 
 * REST interface for even easier image generation
