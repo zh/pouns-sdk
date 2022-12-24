@@ -60,8 +60,24 @@ const generatePoun = async (contracts, seed) => {
   }
 }
 
+const getPoun = async (seed = null, chain = 'polygon') => {
+  try {
+    const contracts = getContracts(chain)
+    if (!contracts) throw 'Contracts not available'
+    const theSeed = seed || (await seedPoun(contracts))
+    if (!theSeed) throw 'Invalid seed'
+    poun = await generatePoun(contracts, theSeed)
+    if (!poun) throw 'Generation failed'
+    return { seed: theSeed, svg: poun }
+  } catch (error) {
+    console.log('generatePoun() error: ', error)
+    return null
+  }
+}
+
 module.exports = {
   getContracts,
   seedPoun,
-  generatePoun
+  generatePoun,
+  getPoun
 }

@@ -45,6 +45,7 @@ npm test
 * *`getContracts(chain, rpcURL)`* - create JSON config file to access on-chain contracts. `chain='polygon|mumbai'`, default `rpcURL` pointing to Alchemy node.
 * *`seedPoun(contracts)`* - generate valid seed - a 5-numbers tuple, describing the character parts - head, glasses etc.
 * *`generatePoun(contracts, seed)`* - generate SVG image from a given seed. returns base64 encoded data.
+* *`getPoun(chain, seed)`* - high-level function, combining the seed and the image generation steps. Using default contracts. Seed argument is optional.
 
 ## Usage
 
@@ -97,6 +98,22 @@ and later to display the image:
 <div style={{ display: 'grid', gridTemplateColumns: '1fr' }}>
   <div dangerouslySetInnerHTML={{ __html: currentImg }}></div>
 </div>
+```
+
+### Combining the two steps
+
+The example is for using in *React.js* component:
+
+```js
+import { getPoun } from 'pouns-sdk'
+...
+const [currentImg, setCurrentImg] = useState('')
+
+const createPoun = async () => {
+  const svg = await getPoun();
+  setCurrentImg(Buffer.from(svg, 'base64').toString());
+};
+...
 ```
 
 ### Using in URLs

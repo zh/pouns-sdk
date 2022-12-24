@@ -1,6 +1,6 @@
 {
   "name": "pouns-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "SDK for working with Nouns on-chain NFTs on Polygon (Pouns)",
   "main": "src/pouns-sdk.js",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/zh/pouns-sdk#readme",
   "devDependencies": {
-    "Buffer": "^0.0.0",
+    "buffer": "^6.0.3",
     "chai": "^4.3.7",
     "eslint-plugin-prettier": "^4.2.1",
     "mocha": "^10.2.0",
